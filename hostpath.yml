@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: testpod
+spec: 
+  containers:
+    - image: httpd
+      name: test-container
+      volumeMounts:
+         - mountPath: /data
+           name: first-volume
+
+  volumes:
+   - name: first-volume
+     hostPath:
+      # directory location on host
+      path: /tmp/data
+      # this field is optional
+    ##  type: Directory
