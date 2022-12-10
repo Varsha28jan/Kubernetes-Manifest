@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deplyment
+  annotations:
+    kubernetes.io/change-cause: "Updating to 1.21"
+spec: 
+   replicas: 2
+   selector: 
+     matchLabels: ## It will manage the match label pod
+       app: nginx 
+
+   template: 
+     metadata:
+       name: nginx-pod1
+       labels:
+   # team: integrations
+         app: nginx
+     spec:
+       containers:
+        - name: nginx-container
+          image: nginx:1.21
+          ports:
+           - containerPort: 80
+
