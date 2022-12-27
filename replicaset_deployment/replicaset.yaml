@@ -21,4 +21,5 @@ spec:
           ports:
            - containerPort: 80
 
-##Replicaset: Make sure that given no of replica always running all the time
+##Replicaset: Make sure that given no of replica always running all the time.
+
